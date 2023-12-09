@@ -52,35 +52,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 let card_id = 0;
 
-// =================== Cmdline stuff ======================
-// The command line interpreter will use the prompt "Type itemsList or stop to shutdown the server: "
-console.log("Stop to shutdown the server: ");
-
-process.stdin.setEncoding("utf8"); /* encoding */
-
-process.stdin.on('readable', () => {
-    let dataInput = process.stdin.read();
-    if (dataInput !== null) {
-        let command = dataInput.trim();
-
-        // The server will stop when "stop" is entered. The message "Shutting down the server" 
-        if (command === "stop") {
-            // should be displayed when the server is stopped.
-            console.log("Shutting down the server");
-            
-            // Use process.exit(0) to stop the server.
-            process.exit(0);  /* exiting */
-        }
-        else {
-            // "Invalid command: " followed by the command entered, is displayed for a command other 
-            // than "stop" or "itemsList".
-            console.log(`Invalid command: ${command}`);
-        }
-    }
-
-    dataInput = process.stdin.read();
-    console.log("Stop to shutdown the server: ");
-});
 
 // ======================= Express Stuff =================================
 
