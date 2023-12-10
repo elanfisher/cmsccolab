@@ -27,7 +27,7 @@ const http = require('http');
 const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
-const portNumber = process.argv[2] || 3000;
+const portNumber = process.env.PORT || 3000;
 
 // =================== MongoDb stuff ======================
 // set up the database and collection using the constants defined in .env which are MONGO_DB_USERNAME, MONGO_DB_PASSWORD, MONGO_DB_NAME, and MONGO_COLLECTION
